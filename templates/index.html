@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Reistro de avances</title>
+</head>
+<header>
+    <div class="navbar">
+        <a href="https://www.gob.mx" target="_blank">
+            <img src="../assets/gob.png" alt="LogoGob" class="logogob">
+        </a>
+        <a href="https://www.pemex.com" target="_blank">
+            <img src="../assets/logo.png" alt="Logo" class="logo">
+        </a>
+    </div>
+    <img src="../assets/Logo2025.svg" alt="Logo2" class="logo2">
+</header>   
+<body>
+    <img src="../assets/logo_gob.png" alt="Marca" class="marca">
+    <div class="container">
+        <h2>Registro del avance del Proyecto:</h2>
+        <form autocomplete="off">
+            <div class="seguido">
+                <label for="id">ID Proyecto:</label>
+                <input type="text" id="id" maxlength="11" oninput="completarDatos()" required>
+                <a href="http://192.168.112.29:80" target="_blank" class="Generar_ID">¿No conoces tu ID de proyecto?</a>
+                <label for="nombre">Responsable:</label>
+                <input type="text" id="nombre" disabled required>
+                <label for="area">Área:</label>
+                <input type="text" id="area" disabled required>
+            </div>
+
+            <div class="parrafo">
+                <label for="fecha">Fecha Proyecto:</label>
+                <input type="text" id="fecha" disabled required><br><br>
+                <label for="proyecto">Nombre del Proyecto:</label>
+                <input type="text" id="proyecto" disabled required><br><br>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" disabled required><br><br>
+            </div>
+
+            <div class="renglon">
+                <label for="FI">Fecha de Inicio:</label>
+                <input type="date" id="FI" required>
+                <label for="FT">Fecha de Término:</label>
+                <input type="date" id="FT" required>
+                <label for="Prioridad">Prioridad:</label>
+                <select id="Prioridad" name="Prioridad" required>
+                    <option value=""></option>
+                    <option value="Alta">ALTA</option>
+                    <option value="Media">MEDIA</option>
+                    <option value="Baja">BAJA</option>
+                </select>    
+                <label for="avance">Avance:</label>
+                <input type="number" id="avance" min="0" max="100" required placeholder="0-100">
+                <label for="areainvolucrada">Áreas involucradas:</label>
+                <input type="text" id="areainvolucrada"  style="text-transform: uppercase;" required placeholder="Agregue las diferentes Áreas Involucradas">
+            </div>
+            
+            <div class="parrafo">
+                <label for="proximopaso">Próximos pasos:</label>
+                <input type="text" id="proximopaso" required placeholder="Establezca los Próximos Pasos"><br><br>
+                <label for="Impedimentos">Impedimentos:</label>
+                <input type="text" id="Impedimentos" required placeholder="Introduzca los Impedimentos"><br><br>
+                <label for="observacion">Observaciones:</label>
+                <input type="text" id="observacion" required placeholder="Anote las Observaciones"><br><br>
+            </div>
+
+            <div class="row">
+            <div class="clear">
+                <button type="reset">Limpiar</button>
+            </div>
+            <div class="boton">
+                <button type="submit" onclick="enviarDatos();">Enviar</button>
+            </div>
+            </div>
+        </form>
+    </div>
+    <script src="../script/script.js"></script>
+</body>
+</html>
+

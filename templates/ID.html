@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/estiloID.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Generar ID</title>
+</head>
+<header>
+    <div class="navbar">
+        <a href="https://www.gob.mx" target="_blank">
+            <img src="../assets/gob.png" alt="LogoGob" class="logogob">
+        </a>
+        <a href="https://www.pemex.com" target="_blank">
+            <img src="../assets/logo.png" alt="Logo" class="logo">
+        </a>
+    </div>
+    <img src="../assets/Logo2025.svg" alt="Logo2" class="logo2">
+</header>
+<body>
+    <img src="../assets/logo_gob.png" alt="Marca" class="marca">
+    <div class="container">
+        <form autocomplete="off">
+            <h2>Registro de Proyecto</h2>
+            <div class="row">
+                <label for="Responsable">Responsable:</label>
+                <input type="text" id="Responsable" oninput="UpdateSelect()" required>
+                <label class="FI">Fecha de Inicio:</label>
+                <input type="date" id="FI" required>
+            </div>
+            <div class="column">
+                <label for="area">Área:</label>
+                <select id="area" name="area" required>
+                    <option value="">SELECCIONA UNA OPCIÓN</option>
+                    <option value="DFIN">DIRECCIÓN DE FINANZAS</option>
+                    <option value="DCAS">DCAS</option>
+                    <option value="UAPS">UNIDAD DE ADMINISTRACIÓN DE PRESTAMOS SOCIALES (UAPS)</option>
+                    <option value="UCL">UNIDAD CONCERTACIÓN LABORAL (UCL)</option>
+                    <option value="UEOR">UNIDAD DE EVALUCIÓN DE OPERACIÓN REGIONAL (UEOR)</option>
+                    <option value="UNL">UNIDAD DE NORMATIVIDAD LABORAL (UNL)</option>
+                    <option value="UV">UNIDAD DE VIVIENDA (UV)</option>
+                    <option value="UVJL">UNIDAD DE VINCULACIÓN JURIDICO LABORAL (UVJL)</option>
+                </select><br><br>
+                <label for="Proyect">Nombre de Proyecto:</label>
+                <select id="Proyect" name="Proyect" oninput="UpdateDesc(); AddProject();" required>
+                    <option value="">Seleccione Proyecto</option>
+                    <option value="Add">Agregar Proyecto</option>
+                </select><br><br>
+                <input type="text" id="NewProyect" style="display: none;" oninput="UpdateDesc()">
+
+                <label for="Description">Descripción:</label>
+                <input type="text" id="Description" required>
+            </div>
+            <div class="boton">
+                <button type="submit" onclick="GenerateID()">Generar ID</button>
+            </div>
+        </form>
+    </div>
+    <script src="../script/scriptID.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</body>
+</html>
